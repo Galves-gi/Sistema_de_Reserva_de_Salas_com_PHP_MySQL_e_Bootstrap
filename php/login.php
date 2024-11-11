@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email'] = $email;
                 $_SESSION['user_image'] = $row['user_photo'];
                 $_SESSION['nome'] = $row['user_name'];
-                header("Location: ../conversor.php");
+                header("Location: ../painel.php");
                 exit();
             } else {
                 echo "Senha incorreta.";
