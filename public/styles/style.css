@@ -1,0 +1,68 @@
+.bg-azul {
+  background-color:#0947bb;
+}
+.bg_azul-medio{
+  background-color: #0d6efd;
+  color: white;
+}
+.bg_azul-claro{
+  background-color: #cfe2ff;
+}
+.bg_verde{
+  background-color: #50e9a0;
+}
+.bg_rosa{
+  background-color: #f28cb1;
+}
+.bg_amaarelo{
+  background-color: #ffd700;
+}
+.hover:hover{
+  background-color: #0d6efd;
+}
+header {
+  & .bi {
+    font-size: 3vh;
+    color: white;
+  }
+
+  & .img-logo{
+    width:100px;
+  }
+}
+
+
+.img-perfil{
+  height: 100px;
+  width: 100px;
+}
+
+.circulo_legenda{
+  height: 15px;
+  width: 15px;
+}
+
+#calendarTable th {
+  padding: 10px;
+  width: 2vh;
+  height: 5vh;
+  text-align: center;
+}
+
+#calendarTable tbody {
+  height: 8vh;
+  width: 100%;
+  text-align: center;
+}
+#calendarTable thead {
+  background-color: #0d6efd;
+}
+
+#calendarTable td {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#calendarTable td:hover {
+  background-color:#cfe2ff;
+}
