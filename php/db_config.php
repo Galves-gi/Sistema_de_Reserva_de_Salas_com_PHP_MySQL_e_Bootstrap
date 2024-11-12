@@ -3,7 +3,7 @@
 $servername = "localhost"; 
 $username = "root";
 $password = ""; 
-$dbname = "excel"; //nome do banco
+$dbname = "excel"; // Nome do banco de dados
 
 // Cria a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);

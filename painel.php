@@ -8,10 +8,20 @@
     <!--link -->
     <link rel="shortcut icon" href="img/logo-coruja.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Incluir o jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- CDN do CSS do DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+    <!-- Incluir o JS do DataTables -->
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <!--link bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/datatable.css">
 
 
     <style>
@@ -381,25 +391,40 @@
                         <i class="bi bi-arrow-right-circle-fill text-primary h3"></i>
                     </button>
                 </div>
-                <!--tabela do calendario-->
-                <table class="table table-bordered border border-dark">
-                    <thead class="border-dark table-primary">
-                        <tr class="text-center">
-                            <th scope="col">Dom</th>
-                            <th scope="col">Seg</th>
-                            <th scope="col">Ter</th>
-                            <th scope="col">Qua</th>
-                            <th scope="col">Qui</th>
-                            <th scope="col">Sex</th>
-                            <th scope="col">Sab</th>
-                        </tr>
-                    </thead>
+                <!-- Tabela que será convertida pelo DataTables -->
+                <?php include 'datatable.php'; ?>
+            </section>
 
-                    <tbody class="table-group-divider" id="days">
-                        <!-- Os dias serão inseridos aqui pelo JavaScript (ids js: days) . Cada td precisa ter data-bs-toggle="modal" data-bs-target="#exampleModal"-->
+            <script>
+    $(document).ready(function() {
+        // Inicializa o DataTables com a configuração para 7 e 14 itens por página e tradução para português
+        $('#eventsTable').DataTable({
+            "pageLength": 4, // Define 4 itens por página inicialmente
+            "lengthMenu": [4, 6, 8], // Opções no dropdown para o usuário escolher 4, 6 ou 8 itens por página
+            "pagingType": "simple", // Usa apenas os botões "Anterior" e "Próximo"
+            "language": {
+                "sEmptyTable": "Nenhum dado disponível na tabela",
+                "sInfo": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "sInfoEmpty": "Mostrando 0 a 0 de 0 registros",
+                "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+                "sSearch": "Pesquisar:",
+                "sLoadingRecords": "Carregando...",
+                "oPaginate": {
+                    "sFirst": "Primeiro",
+                    "sPrevious": "Anterior",
+                    "sNext": "Próximo",
+                    "sLast": "Último"
+                },
+                "oAria": {
+                    "sSortAscending": ": Ordenar colunas de forma ascendente",
+                    "sSortDescending": ": Ordenar colunas de forma descendente"
+                }
+            }
+        });
+    });
+</script>
 
-                    </tbody>
-                </table>
+
 
             </section>
         </div>
@@ -409,7 +434,7 @@
                 <div class="modal-content">
                     <div class="modal-header bg-primary">
                         <!--titulo do modal-->
-                        <h1 class="modal-title fs-3 text-white" id="exampleModalLabel">Raerlihlhkhb</h1>
+                        <h1 class="modal-title fs-3 text-white" id="exampleModalLabel">Reserva de (......)</h1>
 
                         <!--botão de fechar-->
                         <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close">
@@ -467,7 +492,7 @@
     <footer class="bg-black text-center p-2 fixed-bottom">
         <span class="text-white">Todos os direitos reservados!</span>
     </footer>
-    <script src="js/calendar.js"></script>
+    <!--<script src="js/calendar.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

@@ -1,0 +1,49 @@
+/* Estilização da tabela */
+#eventsTable {
+    width: 80%; /* Ajusta a largura da tabela para 80% da largura do container */
+    max-width: 1200px; /* Define um limite máximo de largura */
+    border-collapse: collapse;  /* Remove o espaço entre as bordas das células */
+    margin: 20px auto; /* Centraliza a tabela na página */
+}
+
+/* Estilizando cabeçalho da tabela */
+#eventsTable thead {
+    background-color: #4CAF50; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Deixa o texto do cabeçalho em negrito */
+}
+
+/* Estilizando as células da tabela */
+#eventsTable th, #eventsTable td {
+    padding: 8px 10px; /* Reduz o espaçamento interno das células */
+    text-align: left; /* Alinha o texto à esquerda */
+    border-bottom: 1px solid #ddd; /* Borda inferior */
+}
+
+/* Alterando a cor de fundo das linhas alternadas */
+#eventsTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Cor de fundo das linhas pares */
+}
+
+
+/* Estilizando o dropdown de paginação */
+.dataTables_length select {
+    padding: 4px; /* Diminui o padding */
+    font-size: 12px; /* Reduz o tamanho da fonte */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilizando os botões de paginação */
+.dataTables_paginate a {
+    padding: 4px 8px; /* Diminui o tamanho dos botões de paginação */
+    margin: 0 3px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.dataTables_paginate a:hover {
+    background-color: #45a049; /* Cor ao passar o mouse sobre os botões de paginação */
+}
